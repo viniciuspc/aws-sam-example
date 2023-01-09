@@ -7,7 +7,13 @@ Resources:
     Properties:
       Handler: app.lambda_handler
       Runtime: python3.9
-      CodeUri: s3://viniciuspc-code-sam/dc1769dbc35d0aee4b3fdb25e06b0a6f
+      CodeUri: s3://viniciuspc-code-sam/bbf2423e4fcd672b01eb196080c0dd07
       Description: A starter AWS Lambda function.
       MemorySize: 128
       Timeout: 3
+      Events:
+        HelloWorldSAMAPI:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
